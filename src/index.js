@@ -92,12 +92,13 @@ function Menu() {
     </main>
   );
 }
+
 function Pizza({ pizzaObject }) {
   // console.log(pizzaObject);
   // if (pizzaObject.soldOut) return null;
 
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaObject.soldOut ? "sold-out" : ""}`}>
       <img alt={pizzaObject.name} src={pizzaObject.photoName} />
       <div>
         <h3>{pizzaObject.name}</h3>
@@ -109,6 +110,7 @@ function Pizza({ pizzaObject }) {
     </li>
   );
 }
+
 function Footer() {
   const hour = new Date().getHours();
 
